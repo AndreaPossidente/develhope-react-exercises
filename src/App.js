@@ -7,8 +7,13 @@ export default class App extends Component {
     return (
       <div>
         <Hello />
+        <hr />
         <Welcome name={<strong>Gianni</strong>} age={25} />
+        <hr />
+        <Welcome name={<strong>Pino</strong>} age={16} />
+        <hr />
         <Welcome />
+        <hr />
       </div>
     );
   }
