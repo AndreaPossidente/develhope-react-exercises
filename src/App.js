@@ -19,7 +19,7 @@ export default class App extends Component {
         <hr />
         <Welcome />
         <hr />
-        <Counter />
+        <Counter initialValue={0} increment={2} interval={2000} />
       </div>
     );
   }
