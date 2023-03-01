@@ -12,6 +12,8 @@ export default class App extends Component {
         <hr />
         <Welcome name={<strong>Pino</strong>} age={16} />
         <hr />
+        <Welcome name={<strong>Mario</strong>} age={67} />
+        <hr />
         <Welcome />
         <hr />
       </div>
