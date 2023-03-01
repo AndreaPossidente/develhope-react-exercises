@@ -6,6 +6,9 @@ export default class Welcome extends Component {
     return (
       <>
         <p>Welcome, {this.props.name || "Anonymous"}!</p>
+        {/* lo avevo gia fatto nell'esercizio precendente
+            il componente Age viene mostrato solo se il prop age esiste
+            ho utilizzato l'optional chaining ?.age */}
         {this.props?.age > 18 && <Age age={this.props.age} />}
       </>
     );
