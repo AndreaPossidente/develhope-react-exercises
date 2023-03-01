@@ -3,6 +3,7 @@ import ClickCounter from "./ClickCounter";
 import ClickTracker from "./ClickTracker";
 import Counter from "./Counter";
 import Hello from "./Hello";
+import InteractiveWelcome from "./InteractiveWelcome";
 import Welcome from "./Welcome";
 
 export default class App extends Component {
@@ -26,6 +27,8 @@ export default class App extends Component {
         <ClickCounter />
         <hr />
         <ClickTracker />
+        <hr />
+        <InteractiveWelcome />
       </div>
     );
   }
