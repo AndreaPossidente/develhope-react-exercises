@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ClickCounter from "./ClickCounter";
+import ClickTracker from "./ClickTracker";
 import Counter from "./Counter";
 import Hello from "./Hello";
 import Welcome from "./Welcome";
@@ -23,6 +24,8 @@ export default class App extends Component {
         <Counter initialValue={0} increment={2} interval={2000} />
         <hr />
         <ClickCounter />
+        <hr />
+        <ClickTracker />
       </div>
     );
   }
