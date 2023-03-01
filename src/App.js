@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Counter from "./Counter";
 import Hello from "./Hello";
 import Welcome from "./Welcome";
 
@@ -18,6 +19,7 @@ export default class App extends Component {
         <hr />
         <Welcome />
         <hr />
+        <Counter />
       </div>
     );
   }
