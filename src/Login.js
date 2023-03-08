@@ -39,7 +39,7 @@ export default class Login extends Component {
           onChange={this.handleInputChange}
           name="remember"
           type="checkbox"
-          checked={this.state.checked}
+          checked={this.state.remember}
         />{" "}
         <label>Remember</label>
         <br />
