@@ -11,7 +11,12 @@ export default class TodoList extends Component {
     e.preventDefault();
     const { todo } = this.formRef.current.elements;
     if (todo.value !== "") {
-      this.setState((state) => ({ items: [...state.items, todo.value] }));
+      this.setState((state) => {
+        const newState = { items: [...state.items, todo.value] };
+        todo.value = "";
+        todo.focus();
+        return newState;
+      });
     }
   };
 
