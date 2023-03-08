@@ -26,6 +26,12 @@ export default class TodoList extends Component {
     todo.focus();
   };
 
+  handleRemove(index) {
+    this.setState((state) => ({
+      items: state.items.filter((item, itemIndex) => itemIndex !== index),
+    }));
+  }
+
   render() {
     return (
       <>
@@ -39,7 +45,10 @@ export default class TodoList extends Component {
         </form>
         <ul>
           {this.state.items.map((item, index) => (
-            <li key={item + index}>{item}</li>
+            <li key={item + index}>
+              {item}{" "}
+              <button onClick={() => this.handleRemove(index)}>Remove</button>
+            </li>
           ))}
         </ul>
       </>
