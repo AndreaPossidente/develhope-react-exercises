@@ -14,6 +14,10 @@ export default class Login extends Component {
     this.setState({ [name]: val });
   };
 
+  handleReset = () => {
+    this.setState({ username: "", password: "", remember: false });
+  };
+
   render() {
     return (
       <>
@@ -39,7 +43,7 @@ export default class Login extends Component {
           onChange={this.handleInputChange}
           name="remember"
           type="checkbox"
-          checked={this.state.checked}
+          checked={this.state.remember}
         />{" "}
         <label>Remember</label>
         <br />
@@ -54,6 +58,7 @@ export default class Login extends Component {
         >
           Login
         </button>
+        <button onClick={this.handleReset}>Reset</button>
         <pre>{JSON.stringify(this.state)}</pre>
       </>
     );
