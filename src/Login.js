@@ -19,8 +19,17 @@ export default class Login extends Component {
   };
 
   render() {
+    const LoginButtonStyle = {
+      backgroundColor:
+        this.state.username.length === 0
+          ? ""
+          : this.state.username.length < 8
+          ? "#ff0000"
+          : "#00ff00",
+    };
+
     return (
-      <>
+      <div>
         <h1>Login</h1>
         <label>Username:</label>
         <br />
@@ -49,6 +58,7 @@ export default class Login extends Component {
         <br />
         <button
           type="submit"
+          style={LoginButtonStyle}
           disabled={
             this.state.username === "" || this.state.password === ""
               ? true
@@ -60,7 +70,7 @@ export default class Login extends Component {
         </button>
         <button onClick={this.handleReset}>Reset</button>
         <pre>{JSON.stringify(this.state)}</pre>
-      </>
+      </div>
     );
   }
 }
