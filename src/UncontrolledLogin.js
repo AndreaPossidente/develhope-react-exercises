@@ -24,6 +24,11 @@ export default class UncontrolledLogin extends Component {
     }
   };
 
+  componentDidMount() {
+    const { username } = this.formRef.current.elements;
+    username.focus();
+  }
+
   render() {
     return (
       <form ref={this.formRef} onSubmit={this.handleFrom}>
