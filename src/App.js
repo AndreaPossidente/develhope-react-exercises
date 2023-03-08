@@ -5,6 +5,7 @@ import Counter from "./Counter";
 import Hello from "./Hello";
 import InteractiveWelcome from "./InteractiveWelcome";
 import Login from "./Login";
+import UncontrolledLogin from "./UncontrolledLogin";
 import Welcome from "./Welcome";
 
 export default class App extends Component {
@@ -35,6 +36,8 @@ export default class App extends Component {
         <InteractiveWelcome />
         <hr />
         <Login onLogin={this.onLogin} />
+        <hr />
+        <UncontrolledLogin onLogin={this.onLogin} />
       </div>
     );
   }
