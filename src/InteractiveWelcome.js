@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Welcome from "./Welcome";
 
 export default class InteractiveWelcome extends Component {
-  state = { name: null };
+  state = { name: "" };
   handleInputChange = (e) => {
     this.setState((prevState) => ({ name: e.target.value }));
   };
