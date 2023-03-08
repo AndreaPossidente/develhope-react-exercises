@@ -16,6 +16,8 @@ export default class App extends Component {
   render() {
     return (
       <div>
+        <hr />
+        <TodoList />
         <Hello />
         <hr />
         <Welcome name={<strong>Gianni</strong>} age={25} />
@@ -39,8 +41,6 @@ export default class App extends Component {
         <Login onLogin={this.onLogin} />
         <hr />
         <UncontrolledLogin onLogin={this.onLogin} />
-        <hr />
-        <TodoList />
       </div>
     );
   }
