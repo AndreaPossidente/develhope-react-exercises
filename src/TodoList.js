@@ -20,6 +20,12 @@ export default class TodoList extends Component {
     }
   };
 
+  handleReset = () => {
+    const { todo } = this.formRef.current.elements;
+    this.setState({ items: [] });
+    todo.focus();
+  };
+
   render() {
     return (
       <>
@@ -27,6 +33,9 @@ export default class TodoList extends Component {
         <form ref={this.formRef} onSubmit={this.handleSubmit}>
           <input name="todo" />
           <button>Add</button>
+          <button type="reset" onClick={this.handleReset}>
+            Reset
+          </button>
         </form>
         <ul>
           {this.state.items.map((item, index) => (
