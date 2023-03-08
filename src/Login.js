@@ -8,13 +8,12 @@ export default class Login extends Component {
   };
 
   handleInputChange = (e) => {
-    const name = e.target.name;
-    const type = e.target.type;
-    const value = type === "checkbox" ? e.target.checked : e.target.value;
-    this.setState({
-      [name]: value,
-    });
+    const { name, type, value, checked } = e.target;
+
+    const val = type === "checkbox" ? checked : value;
+    this.setState({ [name]: val });
   };
+
   render() {
     return (
       <>
@@ -43,6 +42,18 @@ export default class Login extends Component {
           checked={this.state.checked}
         />{" "}
         <label>Remember</label>
+        <br />
+        <button
+          type="submit"
+          disabled={
+            this.state.username === "" || this.state.password === ""
+              ? true
+              : false
+          }
+          onClick={() => this.props.onLogin(this.state)}
+        >
+          Login
+        </button>
         <pre>{JSON.stringify(this.state)}</pre>
       </>
     );

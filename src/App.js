@@ -8,6 +8,9 @@ import Login from "./Login";
 import Welcome from "./Welcome";
 
 export default class App extends Component {
+  onLogin = (user) => {
+    console.log(user);
+  };
   render() {
     return (
       <div>
@@ -31,7 +34,7 @@ export default class App extends Component {
         <hr />
         <InteractiveWelcome />
         <hr />
-        <Login />
+        <Login onLogin={this.onLogin} />
       </div>
     );
   }
