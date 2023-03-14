@@ -3,14 +3,24 @@ import ClickCounter from "./ClickCounter";
 import ClickTracker from "./ClickTracker";
 import Container from "./Container";
 import Counter from "./Counter";
+import DisplayLanguage from "./DisplayLanguage";
 import Hello from "./Hello";
 import InteractiveWelcome from "./InteractiveWelcome";
+import { LanguageContext } from "./LanguageContext";
 import Login from "./Login";
 import TodoList from "./TodoList";
 import UncontrolledLogin from "./UncontrolledLogin";
 import Welcome from "./Welcome";
 
 export default class App extends Component {
+  state = {
+    lang: "it",
+  };
+
+  handleLangChange = (e) => {
+    this.setState({ lang: e.target.value });
+  };
+
   onLogin = (user) => {
     console.log(user);
   };
@@ -25,6 +35,23 @@ export default class App extends Component {
 
     return (
       <div>
+        {/* START CONTEXT EXERCISE */}
+        <div className="flex justify-center items-center">
+          <select
+            onChange={this.handleLangChange}
+            className="border p-1 border-slate-700 rounded-md m-4"
+          >
+            <optgroup>
+              <option value="it">Italiano</option>
+              <option value="en">Inglese</option>
+              <option value="fr">Francese</option>
+            </optgroup>
+          </select>
+          <LanguageContext.Provider value={this.state.lang}>
+            <DisplayLanguage />
+          </LanguageContext.Provider>
+        </div>
+        {/* END CONTEXT EXERCISE */}
         <hr />
         {/* START TODO LIST */}
         <TodoList
