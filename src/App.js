@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ClickCounter from "./ClickCounter";
 import ClickTracker from "./ClickTracker";
+import Container from "./Container";
 import Counter from "./Counter";
 import Hello from "./Hello";
 import InteractiveWelcome from "./InteractiveWelcome";
@@ -41,6 +42,8 @@ export default class App extends Component {
         <Login onLogin={this.onLogin} />
         <hr />
         <UncontrolledLogin onLogin={this.onLogin} />
+        <hr />
+        <Container>Questo è il contenuto del componente "Container"</Container>
       </div>
     );
   }
