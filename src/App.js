@@ -43,7 +43,9 @@ export default class App extends Component {
         <hr />
         <UncontrolledLogin onLogin={this.onLogin} />
         <hr />
-        <Container>Questo è il contenuto del componente "Container"</Container>
+        <Container title="Questo è il titolo">
+          Questo è il contenuto del componente "Container"
+        </Container>
       </div>
     );
   }
