@@ -27,5 +27,5 @@ export default function useGithubUser(username) {
     getGithubUser(username);
   }, [username]);
 
-  return { user, error, loading };
+  return { user, error, loading, getGithubUser };
 }
