@@ -8,6 +8,7 @@ import Hello from "./Hello";
 import InteractiveWelcome from "./InteractiveWelcome";
 import { LanguageContext } from "./LanguageContext";
 import Login from "./Login";
+import Sum from "./Sum";
 import TodoList from "./TodoList";
 import UncontrolledLogin from "./UncontrolledLogin";
 import Welcome from "./Welcome";
@@ -35,6 +36,10 @@ export default class App extends Component {
 
     return (
       <div>
+        {/* START SUM COMPONENT */}
+        <Sum numbers={[8, 10, 2]} />
+        {/* END SUM COMPONENT */}
+
         {/* START CONTEXT EXERCISE */}
         <div className="flex justify-center items-center">
           <select
