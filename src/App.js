@@ -98,7 +98,11 @@ export default class App extends Component {
         <hr />
         <Counter initialValue={0} increment={2} interval={2000} />
         <hr />
-        <ClickCounter />
+        <ClickCounter
+          onCounterChange={(count) => {
+            console.log("The counter is: " + count);
+          }}
+        />
         <hr />
         <ClickTracker />
         <hr />

@@ -19,14 +19,18 @@
 //   }
 // }
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-export default function ClickCounter() {
+export default function ClickCounter({ onCounterChange }) {
   const [count, setCount] = useState(0);
 
   const handleIncrement = () => {
     setCount((prevCount) => prevCount + 1);
   };
+
+  useEffect(() => {
+    onCounterChange(count);
+  }, [count, onCounterChange]);
 
   return (
     <div>
