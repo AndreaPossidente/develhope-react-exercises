@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+// import React, { Component } from "react";
 import Age from "./Age";
 
 // export default class Welcome extends Component {

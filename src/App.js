@@ -38,6 +38,7 @@ export default class App extends Component {
       <div>
         {/* START SUM COMPONENT */}
         <Sum numbers={[8, 10, 2]} />
+        <Sum />
         {/* END SUM COMPONENT */}
 
         {/* START CONTEXT EXERCISE */}
