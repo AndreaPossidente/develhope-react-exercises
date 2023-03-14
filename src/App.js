@@ -1,10 +1,10 @@
 import React from "react";
-import GithubUserList from "./GithubUserList";
+import Counter from "./Counter";
 
 export default function App() {
   return (
     <div>
-      <GithubUserList />
+      <Counter initialValue={0} />
     </div>
   );
 }
