@@ -32,12 +32,12 @@ export default function GithubUser({ username }) {
 
   return (
     <div>
-      {loading && <div className="animate-ping">loading...</div>}
       {error && (
         <div className="border rounded-lg m-3 p-1 text-center max-w-[250px] overflow-hidden">
           {error.message}
         </div>
       )}
+      {loading && <div className="animate-ping">loading...</div>}
       {user && !error && (
         <div className="border rounded-lg m-3 max-w-[250px] overflow-hidden">
           <img src={user.avatar_url} alt={user.name} />
