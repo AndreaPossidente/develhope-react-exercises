@@ -17,6 +17,7 @@ export default function App() {
           element={<Counter initialValue={0} increment={1} interval={1000} />}
         />
         <Route path="/users" element={<GithubUserList />}>
+          <Route index element={<h2>Add a user and select it</h2>} />
           <Route path=":username" element={<ShowGithubUser />} />
         </Route>
         <Route path="*" element={<h2>Page not found</h2>} />

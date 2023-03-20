@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 
 export default function GithubUserList() {
-  const [usernames, setUsernames] = useState(["AndreaPossidente"]);
+  const [usernames, setUsernames] = useState([]);
 
   const handleAddUsername = (e) => {
     e.preventDefault();
@@ -28,7 +28,6 @@ export default function GithubUserList() {
             className="block p-1 m-1 border rounded-md"
             key={index + username}
           >
-            {" "}
             <Link to={`/users/${username}`}>{username}</Link>
           </li>
         ))}
