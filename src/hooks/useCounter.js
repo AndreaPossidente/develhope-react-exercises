@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { counterSlice } from "../store/counterSlice";
 
@@ -18,10 +18,10 @@ export default function useCounter(initialValue = 0) {
     dispatch(reset(initialValue));
   };
 
-  useEffect(() => {
-    console.log("set initial state");
-    dispatch(reset(initialValue));
-  }, [dispatch, reset, initialValue]);
+  // useEffect(() => {
+  //   console.log("set initial state");
+  //   dispatch(reset(initialValue));
+  // }, [dispatch, reset, initialValue]);
 
   return {
     count,
