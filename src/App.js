@@ -1,14 +1,12 @@
 import React from "react";
-import Counter from "./Counter";
-import GithubUser from "./GithubUser";
-import Login from "./Login";
+import { Provider } from "react-redux";
+import Counter from "./components/Counter";
+import { store } from "./store";
 
 export default function App() {
   return (
-    <div>
+    <Provider store={store}>
       <Counter initialValue={0} />
-      <Login />
-      <GithubUser username="AndreaPossidente" />
-    </div>
+    </Provider>
   );
 }

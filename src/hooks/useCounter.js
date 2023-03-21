@@ -1,20 +1,30 @@
-import { useState } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { counterSlice } from "../store/counterSlice";
 
 export default function useCounter(initialValue = 0) {
-  const [counter, setCounter] = useState(initialValue);
+  const { increment, decrement, reset } = counterSlice.actions;
+  const count = useSelector((state) => state.counterReducer);
+
+  const dispatch = useDispatch();
 
   const handleIncrement = () => {
-    setCounter((counter) => counter + 1);
+    dispatch(increment());
   };
   const handleDecrement = () => {
-    setCounter((counter) => counter - 1);
+    dispatch(decrement());
   };
   const handleReset = () => {
-    setCounter(initialValue);
+    dispatch(reset(initialValue));
   };
 
+  useEffect(() => {
+    console.log("set initial state");
+    dispatch(reset(initialValue));
+  }, [dispatch, reset, initialValue]);
+
   return {
-    counter,
+    count,
     onIncrement: handleIncrement,
     onDecrement: handleDecrement,
     onReset: handleReset,

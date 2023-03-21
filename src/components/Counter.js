@@ -1,10 +1,9 @@
 import React from "react";
-import useCounter from "./hooks/useCounter";
+import useCounter from "../hooks/useCounter";
 
 export default function Counter({ initialValue }) {
   // custom hook
-  const { counter, onIncrement, onDecrement, onReset } =
-    useCounter(initialValue);
+  const { count, onIncrement, onDecrement, onReset } = useCounter(initialValue);
 
   const styles = {
     container: "flex flex-col justify-center items-center h-[200px]",
@@ -14,7 +13,7 @@ export default function Counter({ initialValue }) {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.h1}>{counter}</h1>
+      <h1 className={styles.h1}>{count}</h1>
       <div>
         <button className={styles.btn} onClick={onDecrement}>
           -
