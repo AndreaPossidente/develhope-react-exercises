@@ -5,13 +5,13 @@ import useGithubUser from "./hooks/useGithubUser";
 and renders some of the data within a div tag. The API to query is https://api.github.com/users/${username}.
  */
 export default function GithubUser({ username }) {
-  //const { user, error, loading } = useGithubUser(username);
-  // ho tolto l'username per far vedere che se non c'è non viene effettuata una chiamata all'api grazie al conditional fetching di SWR
-  const { user, error, loading } = useGithubUser();
+  const { user, error, loading, refetch } = useGithubUser(username);
+  //const { user, error, loading } = useGithubUser();
   return (
     <div>
       {loading && <div className="animate-ping">loading...</div>}
       {error && <h2>{error}</h2>}
+      {!error && user && <button onClick={() => refetch()}>Refetch</button>}
       {user && (
         <div className="border rounded-lg m-3 max-w-[250px] overflow-hidden">
           <img src={user.avatar_url} alt={user.name} />
